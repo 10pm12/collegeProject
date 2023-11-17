@@ -1,0 +1,78 @@
+<!DOCTYpE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  
+    
+</head>
+<body>
+    <header>
+        <div class="navbar"><div class="border">THE SHOpING SITE </div>
+    <div class="border"><p class="deliver-to">Deliver To
+        
+    </p>
+<div class="deliver"><i class="fa-solid fa-location-arrow"></i><p class="deliver-add">UEM</p></div></div>
+   
+    <!-- search box -->
+    <div class="div-search border">
+        <input type="text" name="search" id="search" placeholder="search" class="search-input">
+        <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
+    <div><i class="fa-solid fa-cart-shoping border"></i><p>Cart</p></div>
+    <div><i class="fa-solid fa-user border"></i><p>Account</p></div>
+    
+</div>
+<!-- scrollable menu -->
+<div class="panel">
+<p class="panel-ops">Rosogolla</p>
+<p class="panel-ops">Kalachand</p>
+<p class="panel-ops">Chamcham</p>
+<p class="panel-ops">pakoda</p>
+<p class="panel-ops">Achar</p>
+<p class="panel-ops">papad</p>
+<p class="panel-ops">Namkeen</p>
+<p class="panel-ops">Bhujia</p>
+<p class="panel-ops">Chanachur</p>
+<p class="panel-ops">Chips</p>
+
+</div>
+    </header>
+    <div class="hero-section">
+        <div class="item" id="item1" onclick="showitem('item1')"><img src="item1.jpg" alt="item1" style="height: 100px;" ></div>
+        <div class="item" id="item2" onclick="showitem('item2')"><img src="item2.jpg" alt="item2" style="height: 100px;" onclick="showitem('item2')"></div>
+        <div class="item" id="item3" onclick="showitem('item3')"><img src="item3.jpg" alt="item3" style="height: 100px;" onclick="showitem('item3')"></div>
+        <div class="item" id="item4" onclick="showitem('item4')"><img src="item4.jpg" alt="item4" style="height: 100px;" onclick="showitem('item4')"></div>
+    </div>
+    <!-- <div class="product"></div> -->
+    <!-- <script>
+        let pImg=document.querySelector(".productImg");
+        let pPrice=document.querySelector(".productPrice");
+        let dEst=document.querySelector(".deliveryEsteem");
+        let buy=document.querySelector("#buyBtn");
+        let cart=document.querySelector("#cartBtn");
+        function showitem(item){
+            pImg.innerHTML=`<div><img src="${item}.jpg" alt="${item}"></div>`;
+    
+        }
+    </script> -->
+    <div class="dyn-product">
+    </div>
+<script src="script.js"></script>
+<form action="productPage.html" method="post">
+    <input id="main-thing" type="button" value="item1" onsubmit="storeSelectedItem()">CLICK TO TEST
+</form>
+<script>
+    function storeSelectedItem() {
+        // Get the selected item value
+        var selectedItem = document.querySelector("#main-thing").value;
+
+        // Store the selected item in localStorage
+        localStorage.setItem('selectedItem', selectedItem);
+    }
+</script>
+</body>
+</html>
