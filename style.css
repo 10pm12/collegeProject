@@ -1,83 +1,225 @@
 *{
+    padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    border: border-box;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.navbar{
-    height: 60px;
-    background-color: black;
-    color: white;
+
+body{
+    width: 100%;
+    /* height: 100vh; */
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    /* you can style the scrollbar */
+}
+/* Navbar  */
+.nav{
+    background-color: rgba(53, 212, 191, 0.455);
     display: flex;
-    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    position: relative;
 }
-.border{
-    border: 2px solid transparent;
+.nav #logo{
+    margin-left: 1%;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: cursive;
 }
-.border:hover{
-    border:2px solid white;
+.nav #location{
+    margin-left: 1%;
 }
-.deliver-to{
-    color: #cccccc ;
-    font-size: 0.90 rem;
-    margin-left: 15px;
-}
-.deliver{
+.nav #searcharea{
+    margin-left: 5%;
     display: flex;
-    align-items: center;
+    /* border: 1px solid red; */
+    position: relative;
+    width: 60%;
 }
-.fa-solid {
-    margin-right: 3px;
-}
-.div-search{
-    display: flex;
-    height: 40px;
-    
-   
-}
-.search-input{
-    border-radius: 30px;
-    width: 250px;
-    background-color: #f3f3f3;
-    font-size: 7 rem;
+.nav input[type="text"]{
+    padding-left: 2%;
+    font-size: 18px;
+    width: 95%;
+    border-radius: 8px;
     border: none;
 }
-.search-icon{
-    background-color: rgb(100, 211, 21);
-    border-radius: 3px;    
+.nav #searcharea i{
+    position: absolute;
+    right: 6%;
+    top: 4px;
+    font-size: 28px;
 }
-.fa-cart-shopping {
- margin-left: 5px;
+.nav #cart{
+    position: absolute;
+    right: 5%;
+    font-size: 35px;
 }
-.fa-user{
-    margin-left: 16px;
+.nav button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
-/* panel */
-.panel{
-    height: 40px;
-    background-color: #222f3d;
+.nav #profile{
+    position: absolute;
+    font-size: 30px;
+    right: 2%;
+    margin-right: 0;
+}
+/* Scrollable Bar id="products" */
+
+.products{
+    background-color: #564ac690;
+    backdrop-filter: blur(100px);
+    margin-top: 2px;
+    width: 100%;
     display: flex;
-    color: rgb(221, 221, 157);
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+.products button{
+    font-size: 16px;
+    min-width: 6rem;
+    border: 1px solid rgba(0, 0, 0, 0.249);
+    background-color: transparent;
+    margin-left: 5px;
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+    background-color: #fff;
+}
+.products button:hover{
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+/* Main imgs section */
+.main{
+    width: 99%;
+    height: 80vh;
+    margin: 5px;
+    border: 1px solid red;
+    background: url("https://img.freepik.com/free-vector/dripping-background-with-glaze-confetti-cream-realistic-set-illustration_1284-61042.jpg?w=1060&t=st=1700244095~exp=1700244695~hmac=dcead82b740c7dd27a67c050aa790ac72b820f5d7a3f05340680c982215ecdab");
+    overflow: scroll;
+    /* display: flex; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    /* filter:grayscale(0.3); */
+    /* filter: brightness(0.8); */
+}
+.main .container{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.main #box{
+    width: 380px;
+    height: 55vh;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 2%;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.581);
+    border-radius: 5px;
+    backdrop-filter: blur(3px);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.421);
+}
+.main #box img{
+    width: 380px;
+    height: 45vh;
+    border-radius: 0 0 15px 15px;
+    transition: 0.7s ease;
+}
+.main #box:hover img{
+    transform: scale(1.10);
+}
+.main #box #price{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.main #details{
+    margin-left: 2%;
+}
+.main button{
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 5px;
+    /* background-color: #fff; */
+    margin-right: 2%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
    
+.main button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #7cc392 0%, rgb(231, 223, 70) 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 9em;
+   }
+
+/* footer editing */
+
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: #061125;
+    color: white;
 }
-/* .panel-ops{
-    /* font-size: 0.5 rem; */
-} */
-.panel p{
-  display: inline;  
-  /* font-size: 0.5 rem; */
+.footer .head{
+    width: 100%;
+    height: 15%;
+    text-align: center;
 }
-.hero-section{
-    height: 600px;
-    width: 1000px;
+.footer .footermain{
+    margin-left: 5%;
+}
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+#team ul li{
+    margin-top: 10px;
+}
+.footer .footermain a:hover{
+    color: blue;
+}
+
+ul{
+    list-style: none;
+}
+.footer .footermain{
+    display: flex;
+    justify-content: space-between;
+}
+#git{
     display: flex;
 }
-/* .item{
-    height: 300px;
-    width: 500px;
-} */
-.product{
-    height: 500px;
-    background-color: aqua;
+#git h2{
+    margin-top: 12px;
+    margin-right: 15px;
 }
+#git i{
+    font-size: 50px;
+}
+#mentor{margin-right: 30px;}
