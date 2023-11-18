@@ -17,8 +17,8 @@ body{
 .nav{
     background-color: rgba(53, 212, 191, 0.455);
     display: flex;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: .5%;
+    padding-bottom:0.5%;
     width: 100%;
     position: relative;
 }
@@ -55,6 +55,9 @@ body{
     position: absolute;
     right: 5%;
     font-size: 35px;
+}
+.nav #cart a{
+    color: black;
 }
 .nav button{
     background-color: transparent;
@@ -127,7 +130,7 @@ body{
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.421);
 }
 .main #box img{
-    width: 380px;
+    width: 100%;
     height: 45vh;
     border-radius: 0 0 15px 15px;
     transition: 0.7s ease;
@@ -223,3 +226,179 @@ ul{
     font-size: 50px;
 }
 #mentor{margin-right: 30px;}
+
+/* Product page */
+.productmain{
+    display: flex;
+}
+.productmain .box{
+    width: 40%;
+    height: 80vh;
+    overflow: hidden;
+    border: 2px solid red;
+}
+#productdetails{
+    width: 20%;
+}
+.productmain .box img{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Cart details */
+.cartmain{
+    width: 100%;
+    height: 85vh;
+    background-color: rgba(210, 212, 95, 0.259);
+    display: flex;
+    overflow: hidden;
+}
+.cartproducts{
+    width: 72%;
+    height: 85vh;
+    overflow-y: scroll;
+}
+.cartmain .cartproduct{
+    width: 90%;
+    height: 230px;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.542);
+    margin-top: 1%;
+    margin-left: 1%;
+    backdrop-filter: blur(10px);
+}
+.cartproduct button{
+    width: 4rem;
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.514);
+    border-radius: 1px 10px;
+    margin-top: 90%;
+}
+#cartbox{
+    width: 200px;
+    height: 200px;
+    margin-left: 5%;
+    margin-top: 1%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+}
+#cartbox img{
+    width: 100%;
+}
+#cartdetails{
+    margin-left: 4%;
+    margin-top: 2%;
+}
+.cartmain .carttotal{
+    width: 23%;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 250px;
+    border-radius: 10px;
+    text-align: end;
+    padding-right: 1%;
+    padding-top: 1%;
+    border: 1px solid white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.542);
+    backdrop-filter: blur(10px);
+}
+.carttotal button{
+    width: 10rem;
+    height: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.407);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: cursive;
+    margin-top: 2%;
+}
+
+/* Buy now address form*/
+.buymain{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(104, 186, 203);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkout{
+    width: 25%;
+    height: 75vh;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.482);
+    transition: 0.6s ease;
+}
+.checkout:hover{
+    transform: scale(1.05);
+}
+.checkout h2{
+    margin-bottom: 6%;
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+}
+.checkout input[type="text"],input[type="number"],input[type="email"]{
+    width: 90%;
+    height: 2rem;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 2%;
+    border: none;
+    margin-bottom: 3%;
+    margin-left: 4%;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.192) ;
+}
+#address{
+    width: 90%;
+    height: 2rem;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 2%;
+    padding-top: 2%;
+    border: none;
+    margin-bottom: 5px;
+    margin-left: 4%;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.192) ;
+}
+.checkout button{
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 5px;
+    margin-left: 30%;
+    /* background-color: #fff; */
+    margin-right: 2%;
+    margin-top: 70%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+   
+.checkout button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #7cc392 0%, rgb(231, 223, 70) 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+   
+button:hover::before {
+    width: 9em;
+}
+.checkout button:active{
+ cursor: not-allowed;
+}
